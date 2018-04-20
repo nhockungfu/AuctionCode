@@ -78,18 +78,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
 }));
-app.use(handleLayout);
-app.use('/', index);
-app.use('/quanliuser',quanlinguoidung);
-app.use('/quanliyeucau',yeucau);
-app.use('/quanlidanhmuc',danhsachdanhmuc);
-app.use('/timkiem', timkiem);
-app.use('/sanphamloai1', sanpham);
-app.use('/taikhoan',taikhoan);
-app.use('/dangban',dangbanController);
-app.use('/quanlisanphamtaikhoan',quanlisanphamtaikhoan);
 
-app.use(handle404);
 
 app.listen(3000,function () {
     console.log('Ahii');
