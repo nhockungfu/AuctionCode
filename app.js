@@ -1,13 +1,13 @@
-// var express = require('express'),
-//     handlebars = require('express-handlebars'),
-//     handlebars_sections = require('express-handlebars-sections'),
-//     bodyParser = require('body-parser'),
-//     morgan = require('morgan'),
-//     path = require('path'),
-//     wnumb = require('wnumb');
+var express = require('express'),
+    handlebars = require('express-handlebars'),
+    handlebars_sections = require('express-handlebars-sections'),
+    bodyParser = require('body-parser'),
+    morgan = require('morgan'),
+    path = require('path'),
+    wnumb = require('wnumb');
 
 
-// var request = require('request');
+var request = require('request');
 var session = require('express-session');
 // var fileStore = require('session-file-store')(session);
 var MySQLStore = require('express-mysql-session')(session);
