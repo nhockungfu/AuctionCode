@@ -68,7 +68,7 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 
-app.use(handle404);
+// app.use(handle404);
 
 app.listen(3000,function () {
     console.log('Server Listenning...');
