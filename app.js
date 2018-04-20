@@ -7,7 +7,7 @@
 //     wnumb = require('wnumb');
 
 
-var request = require('request');
+// var request = require('request');
 var session = require('express-session');
 // var fileStore = require('session-file-store')(session);
 var MySQLStore = require('express-mysql-session')(session);
