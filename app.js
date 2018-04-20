@@ -4,7 +4,18 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     morgan = require('morgan'),
     path = require('path'),
-    wnumb = require('wnumb');
+    wnumb = require('wnumb'),
+    handle404 = require('./middle-wares/handle-404'),
+    handleLayout=require('./middle-wares/handleLayout'),
+    index= require('./controllers/indexController'),
+    quanlinguoidung=require('./controllers/danhsachnguoidungController'),
+    yeucau=require('./controllers/yeucauController'),
+    timkiem = require('./controllers/timkiemController'),
+    danhsachdanhmuc=require('./controllers/quanlydanhmucController'),
+    sanpham = require('./controllers/sanphamController'),
+    dangbanController = require('./controllers/dangbanController'),
+    taikhoan=require('./controllers/taikhoanController'),
+    quanlisanphamtaikhoan = require('./controllers/quanlisanphamcanhanController');
 
 
 var request = require('request');
@@ -67,9 +78,19 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
 }));
+app.use(handleLayout);
+app.use('/', index);
+app.use('/quanliuser',quanlinguoidung);
+app.use('/quanliyeucau',yeucau);
+app.use('/quanlidanhmuc',danhsachdanhmuc);
+app.use('/timkiem', timkiem);
+app.use('/sanphamloai1', sanpham);
+app.use('/taikhoan',taikhoan);
+app.use('/dangban',dangbanController);
+app.use('/quanlisanphamtaikhoan',quanlisanphamtaikhoan);
 
-// app.use(handle404);
+app.use(handle404);
 
 app.listen(3000,function () {
-    console.log('Server Listenning...');
+    console.log('Ahii');
 });
